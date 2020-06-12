@@ -1,0 +1,30 @@
+﻿@model Establishment
+
+<h2>Insert New Establishment</h2>
+
+<h3 class="message">@ViewBag.Message</h3>
+
+@using (Html.BeginForm("Insert", "EstablishmentManager", FormMethod.Post))
+{
+    <table border="0">
+        <tr>
+            <td class="right">
+                @Html.LabelFor(m => m.Name) :
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.Name)
+                @Html.ValidationMessageFor(m => m.Name, null, new { @class = "message" })
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit">Save</button>
+            </td>
+        </tr>
+    </table>
+}
+
+<br />
+<br />
+
+@Html.ActionLink("Back to Establishment Listing", "List", "EstablishmentManager")

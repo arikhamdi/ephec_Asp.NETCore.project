@@ -1,0 +1,29 @@
+﻿@model List<Establishment>
+
+<h2>Liste des etablissements</h2>
+
+<h3 class="message">@TempData["Message"]</h3>
+
+@Html.ActionLink("Insert","Insert", "EstablishmentManager", null,new {@class="linkbutton"})
+
+<br /><br />
+
+      <table border="1">
+          <tr>
+              <th>ID établissement</th>
+              <th>Nom</th>
+          </tr>
+          @foreach (var item in Model)
+          {
+              <tr>
+                  <td>@item.EstablishmentID</td>
+                  <td>@item.Name</td>
+                  <td>
+                      @Html.ActionLink("Update", "Update", "EstablishmentManager", new {id = item.EstablishmentID}, new {@class = "linkbutton"})
+                  </td>
+                  <td>
+                      @Html.ActionLink("Delete", "Delete", "EstablishmentManager", new { id = item.EstablishmentID }, new { @class = "linkbutton" })
+                  </td>
+              </tr>
+          }
+      </table>

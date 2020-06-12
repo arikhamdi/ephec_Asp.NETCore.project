@@ -1,0 +1,6 @@
+E:\ephec\devops\projets\projetWeb.client\obj\Debug\netcoreapp3.1\projetWeb.client.csprojAssemblyReference.cache
+E:\ephec\devops\projets\projetWeb.client\obj\Debug\netcoreapp3.1\projetWeb.client.AssemblyInfoInputs.cache
+E:\ephec\devops\projets\projetWeb.client\obj\Debug\netcoreapp3.1\projetWeb.client.AssemblyInfo.cs
+E:\ephec\devops\projets\projetWeb.client\obj\Debug\netcoreapp3.1\projetWeb.client.MvcApplicationPartsAssemblyInfo.cache
+E:\ephec\devops\projets\projetWeb.client\obj\Debug\netcoreapp3.1\projetWeb.client.RazorAssemblyInfo.cache
+E:\ephec\devops\projets\projetWeb.client\obj\Debug\netcoreapp3.1\projetWeb.client.RazorAssemblyInfo.cs
