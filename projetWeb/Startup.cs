@@ -53,9 +53,12 @@ namespace projetWeb
 
             app.UseRouting();
 
+            app.UseStaticFiles();
+
             app.UseEndpoints(endpoints => {
                 endpoints.MapControllers();
             });
+
         }
     }
 }

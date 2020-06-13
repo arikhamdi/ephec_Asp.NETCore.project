@@ -1,0 +1,43 @@
+﻿@model Establishment
+
+<h2>Delete Existing Establishment</h2>
+
+<h3 class="message">
+    Warning : You are about to delete an employee record.
+</h3>
+
+@using (Html.BeginForm("Delete", "EstablishmentManager", FormMethod.Post))
+{
+    @Html.HiddenFor(m => m.EstablishmentID)
+
+    <table border="0">
+        <tr>
+            <td class="right">
+                @Html.LabelFor(m => m.EstablishmentID) :
+            </td>
+            <td>
+                @Model.EstablishmentID
+            </td>
+        </tr>
+        <tr>
+            <td class="right">
+                @Html.LabelFor(m => m.Name) :
+            </td>
+            <td>
+                @Model.Name
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit">Delete</button>
+            </td>
+        </tr>
+    </table>
+
+}
+
+
+<br />
+<br />
+
+@Html.ActionLink("Back to Establishment Listing", "List", "EstablishmentManager")

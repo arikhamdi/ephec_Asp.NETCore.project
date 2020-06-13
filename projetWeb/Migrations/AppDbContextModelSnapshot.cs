@@ -38,18 +38,98 @@ namespace projetWeb.Migrations
 
             modelBuilder.Entity("projetWeb.Models.Establishment", b =>
                 {
-                    b.Property<int>("EstablishementID")
+                    b.Property<int>("EstablishmentID")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("EstablishmentID")
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnName("City")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("Country")
+                        .IsRequired()
+                        .HasColumnName("Country")
+                        .HasColumnType("nvarchar(15)")
+                        .HasMaxLength(15);
+
+                    b.Property<string>("Description")
+                        .HasColumnName("Description")
+                        .HasColumnType("nvarchar(2000)")
+                        .HasMaxLength(2000);
+
+                    b.Property<string>("EmailPro")
+                        .IsRequired()
+                        .HasColumnName("EmailPro")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EstablishmentEmail")
+                        .IsRequired()
+                        .HasColumnName("EstablishmentEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Facebook")
+                        .HasColumnName("Facebook")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Instagram")
+                        .HasColumnName("Instagram")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Linkedin")
+                        .HasColumnName("Linkedin")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Logo")
+                        .HasColumnName("Logo")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
-                    b.HasKey("EstablishementID");
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnName("PhoneNumber")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<string>("PostalCode")
+                        .IsRequired()
+                        .HasColumnName("PostalCode")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<string>("Street")
+                        .IsRequired()
+                        .HasColumnName("Street")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("StreetNumber")
+                        .IsRequired()
+                        .HasColumnName("StreetNumber")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<string>("Type")
+                        .HasColumnName("Type")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Vat")
+                        .IsRequired()
+                        .HasColumnName("Vat")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WebSite")
+                        .HasColumnName("WebSite")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("EstablishmentID");
 
                     b.ToTable("Establishment");
                 });

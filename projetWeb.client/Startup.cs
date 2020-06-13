@@ -23,6 +23,8 @@ namespace projetWeb.client
         }
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews();
+
             HttpClient client = new HttpClient();
             // The GetValue<T>() method specifies the key whose value you wish
             // to retrieve and the data type of the value
@@ -46,12 +48,10 @@ namespace projetWeb.client
 
             app.UseRouting();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+            app.UseEndpoints(endpoints => {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=EstablishmentManager}/{action=List}/{id?}");
             });
         }
     }

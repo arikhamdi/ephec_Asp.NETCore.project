@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -16,10 +18,14 @@ namespace projetWeb.Controllers
     {
         private readonly IEstablishmentRepository establishmentRepository = null;
 
-        public EstablishmentsController(IEstablishmentRepository establishmentRepository)
+        public static IWebHostEnvironment _environment;
+
+        public EstablishmentsController(IEstablishmentRepository establishmentRepository, IWebHostEnvironment environment)
         {
             this.establishmentRepository = establishmentRepository;
+            _environment = environment;
         }
+
 
         // GET: api/Establishments
         [HttpGet]
@@ -39,6 +45,7 @@ namespace projetWeb.Controllers
         [HttpPost]
         public void Post(Establishment est)
         {
+
             if (ModelState.IsValid)
             {
                 establishmentRepository.Insert(est);

@@ -8,22 +8,74 @@
 
 <br /><br />
 
-      <table border="1">
-          <tr>
-              <th>ID établissement</th>
-              <th>Nom</th>
-          </tr>
+      <table border="0">
           @foreach (var item in Model)
           {
               <tr>
+                  <td class="right">ID établissement</td>
                   <td>@item.EstablishmentID</td>
+              </tr>
+              <tr>
+                  <td class="right">Nom</td>
                   <td>@item.Name</td>
-                  <td>
-                      @Html.ActionLink("Update", "Update", "EstablishmentManager", new {id = item.EstablishmentID}, new {@class = "linkbutton"})
+              </tr>
+              <tr>
+                  <td class="right">Type</td>
+                  <td>@item.Type</td>
+              </tr>
+              <tr>
+                  <td class="right">T.V.A.</td>
+                  <td>@item.Vat</td>
+              </tr>
+              <tr>
+                  <td class="right">Email Pro</td>
+                  <td>@item.EmailPro</td>
+              </tr>
+              <tr>
+                  <td class="right">Description</td>
+                  <td>@item.Description</td>
+              </tr>
+              <tr>
+                  <td class="right">Pays</td>
+                  <td>@item.Country</td>
+              </tr>
+              <tr>
+                  <td class="right">Adresse</td>
+                  <td>@item.Street</td>
+                  <td>@item.StreetNumber</td>
+              </tr>
+              <tr>
+                  <td class="right">Numéro de téléphone</td>
+                  <td>@item.PhoneNumber</td>
+              </tr>
+              <tr>
+                  <td class="right">Establishment Email</td>
+                  <td>@item.EstablishmentEmail</td>
+              </tr>
+              <tr>
+                  <td class="right">Site Internet</td>
+                  <td>@item.WebSite</td>
+              </tr>
+              <tr>
+                  <td class="right">Instagram</td>
+                  <td>@item.Instagram</td>
+              </tr>
+              <tr>
+                  <td class="right">Facebook</td>
+                  <td>@item.Facebook</td>
+              </tr>
+              <tr>
+                  <td class="right">LinKedin</td>
+                  <td>@item.Linkedin</td>
+              </tr>
+              <tr>
+                  <td class="right">
+                      @Html.ActionLink("Update", "Update", "EstablishmentManager", new { id = item.EstablishmentID }, new { @class = "linkbutton" })
                   </td>
                   <td>
                       @Html.ActionLink("Delete", "Delete", "EstablishmentManager", new { id = item.EstablishmentID }, new { @class = "linkbutton" })
                   </td>
               </tr>
+
           }
       </table>

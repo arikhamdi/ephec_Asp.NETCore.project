@@ -23,16 +23,17 @@ namespace projetWeb.Models
         [StringLength(50, ErrorMessage = "Establishment Name must be less than 50 characters")]
         public string Name { get; set; }
         
-        /*public string Type { get; set; }
+        [Column("Type")]
+        public string Type { get; set; }
         
         [Column("Vat")]
         [Display(Name = "T.V.A.")]
         [Required(ErrorMessage = "Vat is required")]
         public string Vat { get; set; }
-
+        
         [Column("EmailPro")]
-        [Display(Name = "Establishment ID")]
-        [RegularExpression(@"^[a-zA-Z0-9\-'_]$")]
+        [Display(Name = "Email Pro")]
+        [RegularExpression("^[a-zA-Z0-9_\\.-]+@([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", ErrorMessage = "E-mail is not valid")]
         [Required(ErrorMessage = "Email Pro Name is required")]
         [DataType(DataType.EmailAddress)]
         [EmailAddress]
@@ -42,17 +43,29 @@ namespace projetWeb.Models
         [Display(Name = "Description")]
         [StringLength(2000, ErrorMessage = "Description must be less than 2000 characters")]
         public string Description { get; set; }
-
+        
         [Column("Logo")]
         [Display(Name = "Logo")]
-        [Required(ErrorMessage = "Please select file.")]
         [RegularExpression(@"([a-zA-Z0-9\s_\\.\-:])+(.png|.jpg|.gif)$", ErrorMessage = "Only Image files allowed.")]
-        public IFormFile Logo { get; set; }
+        public string Logo { get; set; }
 
         // 
         //  Establishement info
         //
 
+        
+        
+        [Column("Street")]
+        [Display(Name = "Rue")]
+        [Required(ErrorMessage = "Street is required")]
+        [StringLength(100, ErrorMessage = "Street must be less than 100 characters")]
+        public string Street { get; set; }
+
+        [Column("StreetNumber")]
+        [Display(Name = "Numéro de Rue")]
+        [Required(ErrorMessage = "StreetNumber is required")]
+        [StringLength(20, ErrorMessage = "StreetNumber must be less than 20 characters")]
+        public string StreetNumber { get; set; }
 
         [Column("PostalCode")]
         [Display(Name = "Code postal")]
@@ -72,18 +85,6 @@ namespace projetWeb.Models
         [StringLength(15, ErrorMessage = "Country must be less than 15 characters")]
         public string Country { get; set; }
 
-        [Column("Street")]
-        [Display(Name = "Rue")]
-        [Required(ErrorMessage = "Street is required")]
-        [StringLength(100, ErrorMessage = "Street must be less than 100 characters")]
-        public string Street { get; set; }
-
-        [Column("StreetNumber")]
-        [Display(Name = "Numéro de Rue")]
-        [Required(ErrorMessage = "StreetNumber is required")]
-        [StringLength(20, ErrorMessage = "StreetNumber must be less than 20 characters")]
-        public string StreetNumber { get; set; }
-
         [Column("PhoneNumber")]
         [Display(Name = "Numéro de Téléphone")]
         [Required(ErrorMessage = "StreetNumber is required")]
@@ -92,11 +93,11 @@ namespace projetWeb.Models
 
         [Column("EstablishmentEmail")]
         [Display(Name = "Establishment Email")]
-        [RegularExpression(@"^[a-zA-Z0-9\-'_]$")]
+        [RegularExpression("^[a-zA-Z0-9_\\.-]+@([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", ErrorMessage = "E-mail is not valid")]
         [Required(ErrorMessage = "Establishment Email Pro Name is required")]
         [DataType(DataType.EmailAddress)]
         [EmailAddress]
-        public string Email { get; set; }
+        public string EstablishmentEmail { get; set; }
         
         [Column("WebSite")]
         [Display(Name = "Site Internet")]
@@ -118,7 +119,7 @@ namespace projetWeb.Models
         [Url]
         public string Linkedin { get; set; }
         
-        public string[] picture { get; set; }*/
+        //public string[] picture { get; set; }
 
 
 

@@ -4,24 +4,169 @@
 
 <h3 class="message">@ViewBag.Message</h3>
 
+@* The third parameter indicates the HTTP method of submitting the form  *@
 @using (Html.BeginForm("Insert", "EstablishmentManager", FormMethod.Post))
 {
-    <table border="0">
-        <tr>
-            <td class="right">
-                @Html.LabelFor(m => m.Name) :
-            </td>
-            <td>
-                @Html.TextBoxFor(m => m.Name)
-                @Html.ValidationMessageFor(m => m.Name, null, new { @class = "message" })
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <button type="submit">Save</button>
-            </td>
-        </tr>
-    </table>
+<table border="0">
+    <tr>
+        <td class="right">
+            @Html.LabelFor(m => m.Name) :
+        </td>
+        <td>
+            @Html.TextBoxFor(m => m.Name)
+            @Html.ValidationMessageFor(m => m.Name, null, new { @class = "message" })
+        </td>
+    </tr>
+    <tr>
+        <td class="right">
+            @Html.LabelFor(m => m.Type) :
+        </td>
+        <td>
+            @Html.TextBoxFor(m => m.Type)
+            @Html.ValidationMessageFor(m => m.Type, null, new { @class = "message" })
+        </td>
+    </tr>
+    <tr>
+        <td class="right">
+            @Html.LabelFor(m => m.Vat) :
+        </td>
+        <td>
+            @Html.TextBoxFor(m => m.Vat)
+            @Html.ValidationMessageFor(m => m.Vat, null, new { @class = "message" })
+        </td>
+    </tr>
+    <tr>
+        <td class="right">
+            @Html.LabelFor(m => m.EmailPro) :
+        </td>
+        <td>
+            @Html.TextBoxFor(m => m.EmailPro)
+            @Html.ValidationMessageFor(m => m.EmailPro, null, new { @class = "message" })
+        </td>
+    </tr>
+    <tr>
+        <td class="right">
+            @Html.LabelFor(m => m.Description) :
+        </td>
+        <td>
+            @Html.TextAreaFor(m => m.Description, 5, 40, null)
+            @Html.ValidationMessageFor(m => m.Description, null, new { @class = "message" })
+        </td>
+    </tr>
+    <tr>
+        <td class="right">
+            @Html.LabelFor(m => m.Logo) :
+        </td>
+        <td>
+            @Html.TextBoxFor(m => m.Logo, new { type = "file" })
+            @Html.ValidationMessageFor(m => m.Logo, null, new { @class = "message" })
+        </td>
+    </tr>
+    <tr>
+        <td class="right">
+            @Html.LabelFor(m => m.Street) :
+        </td>
+        <td>
+            @Html.TextBoxFor(m => m.Street)
+            @Html.ValidationMessageFor(m => m.Street, null, new { @class = "message" })
+        </td>
+    </tr>
+    <tr>
+        <td class="right">
+            @Html.LabelFor(m => m.StreetNumber) :
+        </td>
+        <td>
+            @Html.TextBoxFor(m => m.StreetNumber)
+            @Html.ValidationMessageFor(m => m.StreetNumber, null, new { @class = "message" })
+        </td>
+    </tr>
+    <tr>
+        <td class="right">
+            @Html.LabelFor(m => m.PostalCode) :
+        </td>
+        <td>
+            @Html.TextBoxFor(m => m.PostalCode)
+            @Html.ValidationMessageFor(m => m.PostalCode, null, new { @class = "message" })
+        </td>
+    </tr>
+    <tr>
+        <td class="right">
+            @Html.LabelFor(m => m.City) :
+        </td>
+        <td>
+            @Html.TextBoxFor(m => m.City)
+            @Html.ValidationMessageFor(m => m.City, null, new { @class = "message" })
+        </td>
+    </tr>
+    <tr>
+        <td class="right">
+            @Html.LabelFor(m => m.Country) :
+        </td>
+        <td>
+            @Html.DropDownListFor(m => m.Country, ViewBag.Countries as List<SelectListItem>, "Please select")
+            @Html.ValidationMessageFor(m => m.Country, null, new { @class = "message" })
+        </td>
+    </tr>
+    <tr>
+        <td class="right">
+            @Html.LabelFor(m => m.PhoneNumber) :
+        </td>
+        <td>
+            @Html.TextBoxFor(m => m.PhoneNumber)
+            @Html.ValidationMessageFor(m => m.PhoneNumber, null, new { @class = "message" })
+        </td>
+    </tr>
+    <tr>
+        <td class="right">
+            @Html.LabelFor(m => m.EstablishmentEmail) :
+        </td>
+        <td>
+            @Html.TextBoxFor(m => m.EstablishmentEmail)
+            @Html.ValidationMessageFor(m => m.EstablishmentEmail, null, new { @class = "message" })
+        </td>
+    </tr>
+    <tr>
+        <td class="right">
+            @Html.LabelFor(m => m.WebSite) :
+        </td>
+        <td>
+            @Html.TextBoxFor(m => m.WebSite)
+            @Html.ValidationMessageFor(m => m.WebSite, null, new { @class = "message" })
+        </td>
+    </tr>
+    <tr>
+        <td class="right">
+            @Html.LabelFor(m => m.Instagram) :
+        </td>
+        <td>
+            @Html.TextBoxFor(m => m.Instagram)
+            @Html.ValidationMessageFor(m => m.Instagram, null, new { @class = "message" })
+        </td>
+    </tr>
+    <tr>
+        <td class="right">
+            @Html.LabelFor(m => m.Facebook) :
+        </td>
+        <td>
+            @Html.TextBoxFor(m => m.Facebook)
+            @Html.ValidationMessageFor(m => m.Facebook, null, new { @class = "message" })
+        </td>
+    </tr>
+    <tr>
+        <td class="right">
+            @Html.LabelFor(m => m.Linkedin) :
+        </td>
+        <td>
+            @Html.TextBoxFor(m => m.Linkedin)
+            @Html.ValidationMessageFor(m => m.Linkedin, null, new { @class = "message" })
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button type="submit">Save</button>
+        </td>
+    </tr>
+</table>
 }
 
 <br />
