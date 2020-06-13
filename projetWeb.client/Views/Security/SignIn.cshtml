@@ -1,0 +1,31 @@
+﻿@model SignIn
+
+
+<h2>Connectez-vous</h2>
+
+@using (Html.BeginForm("SignIn", "Security", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>@Html.LabelFor(m => m.Email) :</td>
+            <td>@Html.TextBoxFor(m => m.Email)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.Password) :</td>
+            <td>@Html.PasswordFor(m => m.Password)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.RememberMe) :</td>
+            <td>@Html.CheckBoxFor(m => m.RememberMe)</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit">Sign In</button>
+            </td>
+        </tr>
+    </table>
+    @Html.ValidationSummary(null, new { @class = "message" })
+
+    <h3>@Html.ActionLink("Créer un compte", "Register", "Security")</h3>
+
+}

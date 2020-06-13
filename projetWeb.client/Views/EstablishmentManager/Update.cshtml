@@ -1,4 +1,5 @@
-﻿@model Establishment
+﻿@using Type = System.Type
+@model Establishment
 
 <h2>Update Existing Establishement</h2>
 
@@ -28,11 +29,12 @@
     </tr>
     <tr>
         <td class="right">
-            @Html.LabelFor(m => m.Type) :
+            @Html.LabelFor(m => m.EstablishmentType) :
         </td>
         <td>
-            @Html.TextBoxFor(m => m.Type)
-            @Html.ValidationMessageFor(m => m.Type, null, new { @class = "message" })
+            @Html.DropDownListFor(m => m.EstablishmentType,
+                new SelectList(Enum.GetValues(typeof(EstablishmentType))),
+                "Selectionnez")
         </td>
     </tr>
     <tr>

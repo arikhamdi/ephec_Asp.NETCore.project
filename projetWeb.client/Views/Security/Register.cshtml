@@ -1,0 +1,58 @@
+﻿@model Register
+
+
+<h2>Enregistrez-vous</h2>
+
+@using (Html.BeginForm("Register", "Security", FormMethod.Post))
+{
+<table>
+    <tr>
+        <td>@Html.LabelFor(m => m.FirstName) :</td>
+        <td>@Html.TextBoxFor(m => m.FirstName)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(m => m.LastName) :</td>
+        <td>@Html.TextBoxFor(m => m.LastName)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(m => m.Password) :</td>
+        <td>@Html.PasswordFor(m => m.Password)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(m => m.ConfirmPassword) :</td>
+        <td>@Html.PasswordFor(m => m.ConfirmPassword)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(m => m.Email) :</td>
+        <td>@Html.TextBoxFor(m => m.Email)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(m => m.PhoneNumber) :</td>
+        <td>@Html.TextBoxFor(m => m.PhoneNumber)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(m => m.Professional) :</td>
+        <td>@Html.CheckBoxFor(m => m.Professional)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(m => m.Gender) :</td>
+        <td>@Html.DropDownListFor(m => m.Gender,
+                new SelectList(Enum.GetValues(typeof(Gender))),
+                "Genre")
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(m => m.BirthDate) :</td>
+        <td>@Html.TextBoxFor(m => m.BirthDate, null, new { type = "date" })</td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button type="submit">Enregistrer</button>
+        </td>
+    </tr>
+</table>
+    @Html.ValidationSummary(null, new { @class = "message" })
+
+    <h3>@Html.ActionLink("Retour à la page de connection", "SignIn", "Security")</h3>
+
+}

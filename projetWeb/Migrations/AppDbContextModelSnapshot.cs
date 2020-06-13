@@ -71,6 +71,10 @@ namespace projetWeb.Migrations
                         .HasColumnName("EstablishmentEmail")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("EstablishmentType")
+                        .HasColumnName("EstablishmentType")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Facebook")
                         .HasColumnName("Facebook")
                         .HasColumnType("nvarchar(max)");
@@ -115,10 +119,6 @@ namespace projetWeb.Migrations
                         .HasColumnName("StreetNumber")
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
-
-                    b.Property<string>("Type")
-                        .HasColumnName("Type")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Vat")
                         .IsRequired()

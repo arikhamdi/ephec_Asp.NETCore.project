@@ -24,7 +24,7 @@ namespace projetWeb.Repositories
                 "SELECT " +
                     "EstablishmentID, " +
                     "Name, " +
-                    "Type, " +
+                    "EstablishmentType, " +
                     "Vat, " +
                     "EmailPro, " +
                     "Description, " +
@@ -52,7 +52,7 @@ namespace projetWeb.Repositories
                 "SELECT " +
                     "EstablishmentID, " +
                     "Name, " +
-                    "Type, " +
+                    "EstablishmentType, " +
                     "Vat, " +
                     "EmailPro, " +
                     "Description, " +
@@ -80,7 +80,7 @@ namespace projetWeb.Repositories
             int count = db.Database.ExecuteSqlRaw(
                 "INSERT INTO Establishment(" +
                     "Name, " +
-                    "Type, " +
+                    "EstablishmentType, " +
                     "Vat, " +
                     "EmailPro, " +
                     "Description, " +
@@ -98,7 +98,7 @@ namespace projetWeb.Repositories
                     "Linkedin " +
                 ") VALUES({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}," +
                 " {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16})",
-                est.Name, est.Type, est.Vat, est.EmailPro, est.Description, est.Logo,
+                est.Name, est.EstablishmentType, est.Vat, est.EmailPro, est.Description, est.Logo,
                 est.Street, est.StreetNumber, est.PostalCode, est.City, est.Country,
                 est.PhoneNumber, est.EstablishmentEmail, est.WebSite, est.Instagram,
                 est.Facebook, est.Linkedin);
@@ -111,7 +111,7 @@ namespace projetWeb.Repositories
             int count = db.Database.ExecuteSqlRaw(
                 "UPDATE Establishment SET " +
                     "Name={0}, " +
-                    "Type={1}, " +
+                    "EstablishmentType={1}, " +
                     "Vat={2}, " +
                     "EmailPro={3}, " +
                     "Description={4}, " +
@@ -128,7 +128,7 @@ namespace projetWeb.Repositories
                     "Facebook={15}, " +
                     "Linkedin={16} " +
                 "WHERE EstablishmentID={17}",
-                est.Name, est.Type, est.Vat, est.EmailPro, est.Description,
+                est.Name, est.EstablishmentType, est.Vat, est.EmailPro, est.Description,
                 est.Logo, est.Street, est.StreetNumber, est.PostalCode, est.City, est.Country,
                 est.PhoneNumber, est.EstablishmentEmail, est.WebSite, est.Instagram,
                 est.Facebook, est.Linkedin, est.EstablishmentID);
