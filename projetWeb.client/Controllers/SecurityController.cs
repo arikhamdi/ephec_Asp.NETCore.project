@@ -40,17 +40,18 @@ namespace projetWeb.client.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (!await roleManager.RoleExistsAsync("Gestionnaire"))
+                if (!await roleManager.RoleExistsAsync("Utilisateur"))
                 {
                     AppIdentityRole role = new AppIdentityRole();
-                    role.Name = "Gestionnaire";
-                    role.Description = "Can perform CRUD operations.";
+                    role.Name = "Utilisateur";
+                    role.Description = "Lister l’ensembles des établissements .";
                     IdentityResult roleResult = await roleManager.
                     CreateAsync(role);
                 }
 
                 AppIdentityUser user = new AppIdentityUser();
                 user.LastName = obj.LastName;
+                user.UserName = obj.UserName;
                 user.FirstName = obj.FirstName;
                 user.Email = obj.Email;
                 user.PhoneNumber = obj.PhoneNumber;
@@ -63,12 +64,12 @@ namespace projetWeb.client.Controllers
 
                 if (result.Succeeded)
                 {
-                    await userManager.AddToRoleAsync(user, "Manager");
+                    await userManager.AddToRoleAsync(user, "Utilisateur");
                     return RedirectToAction("SignIn", "Security");
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Invalid user details");
+                    ModelState.AddModelError("", "La création du compte à échoué");
                 }
             }
             return View(obj);
@@ -86,15 +87,15 @@ namespace projetWeb.client.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await signinManager.PasswordSignInAsync(obj.Email, obj.Password, obj.RememberMe, false);
+                var result = await signinManager.PasswordSignInAsync(obj.UserName, obj.Password, obj.RememberMe, false);
 
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("List", "EmployeeManager");
+                    return RedirectToAction("List", "EstablishmentManager");
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Invalid user details");
+                    ModelState.AddModelError("", "Certaines données ne sont pas correctes");
                 }
             }
             return View(obj);

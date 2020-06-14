@@ -72,6 +72,10 @@ E:\ephec\devops\projets\projetWeb.client\bin\Debug\netcoreapp3.1\runtimes\win-x8
 E:\ephec\devops\projets\projetWeb.client\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 E:\ephec\devops\projets\projetWeb.client\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 E:\ephec\devops\projets\projetWeb.client\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-E:\ephec\devops\projets\projetWeb.client\obj\Debug\netcoreapp3.1\projetWeb.client.MvcApplicationPartsAssemblyInfo.cache
 E:\ephec\devops\projets\projetWeb.client\obj\Debug\netcoreapp3.1\Razor\Views\Security\Register.cshtml.g.cs
 E:\ephec\devops\projets\projetWeb.client\obj\Debug\netcoreapp3.1\Razor\Views\Security\SignIn.cshtml.g.cs
+E:\ephec\devops\projets\projetWeb.client\obj\Debug\netcoreapp3.1\Razor\Views\Security\AccessDenied.cshtml.g.cs
+E:\ephec\devops\projets\projetWeb.client\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+E:\ephec\devops\projets\projetWeb.client\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+E:\ephec\devops\projets\projetWeb.client\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+E:\ephec\devops\projets\projetWeb.client\obj\Debug\netcoreapp3.1\projetWeb.client.MvcApplicationPartsAssemblyInfo.cache

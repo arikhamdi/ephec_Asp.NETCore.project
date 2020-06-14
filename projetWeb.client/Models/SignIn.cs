@@ -9,8 +9,8 @@ namespace projetWeb.client.Models
     public class SignIn
     {
         [Required]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
+        [Display(Name = "Nom d'utilisateur")]
+        public string UserName { get; set; }
 
         [Required]
         [Display(Name = "Mot de Passe")]

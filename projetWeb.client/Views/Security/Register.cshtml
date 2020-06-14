@@ -7,6 +7,10 @@
 {
 <table>
     <tr>
+        <td>@Html.LabelFor(m => m.UserName) :</td>
+        <td>@Html.TextBoxFor(m => m.UserName)</td>
+    </tr>
+    <tr>
         <td>@Html.LabelFor(m => m.FirstName) :</td>
         <td>@Html.TextBoxFor(m => m.FirstName)</td>
     </tr>
@@ -36,20 +40,21 @@
     </tr>
     <tr>
         <td>@Html.LabelFor(m => m.Gender) :</td>
-        <td>@Html.DropDownListFor(m => m.Gender,
-                new SelectList(Enum.GetValues(typeof(Gender))),
-                "Genre")
-        </td>
-    </tr>
-    <tr>
-        <td>@Html.LabelFor(m => m.BirthDate) :</td>
-        <td>@Html.TextBoxFor(m => m.BirthDate, null, new { type = "date" })</td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <button type="submit">Enregistrer</button>
-        </td>
-    </tr>
+        <td>
+            @Html.DropDownListFor(m => m.Gender,
+            new SelectList(Enum.GetValues(typeof(Gender))),
+            "Genre")
+    </td>
+</tr>
+<tr>
+    <td>@Html.LabelFor(m => m.BirthDate) :</td>
+    <td>@Html.TextBoxFor(m => m.BirthDate, null, new { type = "date" })</td>
+</tr>
+<tr>
+    <td colspan="2">
+        <button type="submit">Enregistrer</button>
+    </td>
+</tr>
 </table>
     @Html.ValidationSummary(null, new { @class = "message" })
 

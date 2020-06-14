@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -42,6 +43,8 @@ namespace projetWeb.client.Controllers
             return true;
         }
 
+        [Authorize(Roles = "Utilisateur")]
+        //[AllowAnonymous]
         public async Task<IActionResult> ListAsync()
         {
             HttpResponseMessage response = await client.GetAsync(establishmentApiUrl);

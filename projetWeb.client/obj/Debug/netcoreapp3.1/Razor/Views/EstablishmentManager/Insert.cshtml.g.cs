@@ -27,6 +27,27 @@ using projetWeb.client.Models;
 #line hidden
 #nullable disable
 #nullable restore
+#line 3 "E:\ephec\devops\projets\projetWeb.client\Views\_ViewImports.cshtml"
+using projetWeb.client.Security;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "E:\ephec\devops\projets\projetWeb.client\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "E:\ephec\devops\projets\projetWeb.client\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Authorization;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 1 "E:\ephec\devops\projets\projetWeb.client\Views\EstablishmentManager\Insert.cshtml"
 using Type = System.Type;
 
@@ -34,7 +55,7 @@ using Type = System.Type;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e8fa98d322b6244926e4fea9614bb709381c7b4c", @"/Views/EstablishmentManager/Insert.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2e07a5e713058718de9e32a39b6f4592ee76fe45", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fd2eb4df8e3ca87a0e4a87694ef2e1902d21400b", @"/Views/_ViewImports.cshtml")]
     public class Views_EstablishmentManager_Insert : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Establishment>
     {
         #pragma warning disable 1998
